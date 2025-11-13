@@ -16,18 +16,6 @@ This is a GitHub Action intended for cases where bots (like `shopify[bot]`, `dep
 
 ---
 
-## Inputs
-
-| Input                      | Required | Default        | Description                                                                       |
-| -------------------------- | -------- | -------------- | --------------------------------------------------------------------------------- |
-
-| `allowed-bot-logins`       | No       | `shopify[bot]` | Comma-separated list of GitHub logins that are allowed as bot authors.            |
-| `require-pr-author-is-bot` | No       | `true`         | If `true`, only auto-approve when the PR author login is in `allowed-bot-logins`. |
-| `skip-drafts`              | No       | `true`         | If `true`, skip draft PRs.                                                        |
-| `skip-forks`               | No       | `true`         | If `true`, skip PRs from forked repositories.                                     |
-
----
-
 ## Basic usage
 
 In a consumer repository, create a workflow like:
@@ -53,3 +41,14 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+## Inputs
+
+| Input                      | Required | Default        | Description                                                                       |
+| -------------------------- | -------- | -------------- | --------------------------------------------------------------------------------- |
+| `allowed-bot-logins`       | No       | `shopify[bot]` | Comma-separated list of GitHub logins that are allowed as bot authors.            |
+| `require-pr-author-is-bot` | No       | `true`         | If `true`, only auto-approve when the PR author login is in `allowed-bot-logins`. |
+| `skip-drafts`              | No       | `true`         | If `true`, skip draft PRs.                                                        |
+| `skip-forks`               | No       | `true`         | If `true`, skip PRs from forked repositories.                                     |
+
+---
