@@ -20,11 +20,11 @@ This is a GitHub Action intended for cases where bots (like `shopify[bot]`, `dep
 
 | Input                      | Required | Default        | Description                                                                       |
 | -------------------------- | -------- | -------------- | --------------------------------------------------------------------------------- |
-| `github-token`             | ✅       | —              | GitHub token with `pull-requests: write` permission. Typically `GITHUB_TOKEN`.    |
-| `allowed-bot-logins`       | ❌       | `shopify[bot]` | Comma-separated list of GitHub logins that are allowed as bot authors.            |
-| `require-pr-author-is-bot` | ❌       | `true`         | If `true`, only auto-approve when the PR author login is in `allowed-bot-logins`. |
-| `skip-drafts`              | ❌       | `true`         | If `true`, skip draft PRs.                                                        |
-| `skip-forks`               | ❌       | `true`         | If `true`, skip PRs from forked repositories.                                     |
+
+| `allowed-bot-logins`       | No       | `shopify[bot]` | Comma-separated list of GitHub logins that are allowed as bot authors.            |
+| `require-pr-author-is-bot` | No       | `true`         | If `true`, only auto-approve when the PR author login is in `allowed-bot-logins`. |
+| `skip-drafts`              | No       | `true`         | If `true`, skip draft PRs.                                                        |
+| `skip-forks`               | No       | `true`         | If `true`, skip PRs from forked repositories.                                     |
 
 ---
 
