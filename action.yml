@@ -1,0 +1,35 @@
+name: "Auto-approve bot-only PRs"
+description: "Automatically approves pull requests whose commits are all authored by allowed bots."
+author: "Derek Fodeke-Rodgers"
+branding:
+  icon: "check-circle"
+  color: "green"
+
+inputs:
+  github-token:
+    description: "GitHub token with pull-requests:write permission."
+    required: true
+
+  allowed-bot-logins:
+    description: "Comma-separated list of GitHub logins considered as allowed bots (e.g. shopify[bot],dependabot[bot])."
+    required: false
+    default: "shopify[bot]"
+
+  require-pr-author-is-bot:
+    description: "If true, only auto-approve when the PR author is one of the allowed bot logins."
+    required: false
+    default: "true"
+
+  skip-drafts:
+    description: "If true, skip draft PRs."
+    required: false
+    default: "true"
+
+  skip-forks:
+    description: "If true, skip PRs from forks."
+    required: false
+    default: "true"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
